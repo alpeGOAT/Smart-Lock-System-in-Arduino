@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 35.4, "left": -83.6, "attrs": {} },
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 67.8, "left": 322.8, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -106.9, "left": -173, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -255.77, "left": -12.8, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 88.8,
+      "left": -55.8,
+      "attrs": { "volume": "1.0" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 176.75,
+      "left": -19.2,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -222.8,
+      "left": 831.2,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "lcd1:A", "bb1:tp.18", "green", [ "v0" ] ],
+    [ "lcd1:D7", "mega:12", "green", [ "v19.2", "h317.1" ] ],
+    [ "lcd1:D6", "mega:11", "green", [ "v28.8", "h336.2" ] ],
+    [ "lcd1:D5", "mega:10", "green", [ "v38.4", "h355.3" ] ],
+    [ "lcd1:D4", "mega:9", "green", [ "v48", "h374.4" ] ],
+    [ "lcd1:E", "mega:8", "green", [ "v57.6", "h432" ] ],
+    [ "lcd1:K", "bb1:tn.20", "green", [ "v0" ] ],
+    [ "bb1:tn.19", "mega:GND.1", "green", [ "v9.5", "h155.2", "v-38.4", "h134.4", "v9.6" ] ],
+    [ "lcd1:RW", "bb1:tn.11", "green", [ "v0" ] ],
+    [ "lcd1:RS", "mega:7", "green", [ "v76.8", "h461.1" ] ],
+    [ "lcd1:V0", "pot1:SIG", "green", [ "v124.8", "h-173.1" ] ],
+    [ "pot1:VCC", "bb1:tp.1", "red", [ "v19.2", "h76" ] ],
+    [ "pot1:GND", "bb1:tn.2", "black", [ "v48", "h105.6" ] ],
+    [ "lcd1:VDD", "bb1:tp.8", "green", [ "v0" ] ],
+    [ "lcd1:VSS", "bb1:tn.7", "green", [ "v0" ] ],
+    [ "mega:5V", "bb1:tp.15", "red", [ "v74.1", "h-391.3" ] ],
+    [ "bb1:4b.i", "mega:GND.2", "green", [ "v163.2", "h518.4" ] ],
+    [ "bb1:11b.h", "mega:3", "green", [ "v0", "h249.6", "v-163.2", "h259.2" ] ],
+    [ "keypad1:R1", "mega:35", "green", [ "v0" ] ],
+    [ "keypad1:R2", "mega:37", "green", [ "v0" ] ],
+    [ "keypad1:R3", "mega:39", "green", [ "v0" ] ],
+    [ "keypad1:R4", "mega:41", "green", [ "v0" ] ],
+    [ "keypad1:C1", "mega:45", "green", [ "v0" ] ],
+    [ "keypad1:C2", "mega:47", "green", [ "v0" ] ],
+    [ "keypad1:C3", "mega:49", "green", [ "v0" ] ],
+    [ "keypad1:C4", "mega:51", "green", [ "v0" ] ],
+    [ "r1:1", "bb1:5b.i", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:11b.i", "", [ "$bb" ] ],
+    [ "bz1:1", "bb1:4b.h", "", [ "$bb" ] ],
+    [ "bz1:2", "bb1:5b.h", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
